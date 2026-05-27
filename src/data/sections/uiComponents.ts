@@ -1,4 +1,6 @@
-export const uiComponents = [
+import type { UIItem } from "../../types";
+
+export const uiComponents: UIItem[] = [
   {
     "id": "gnb",
     "group": "UI Components & Form Controls",

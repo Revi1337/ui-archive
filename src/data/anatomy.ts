@@ -1,10 +1,12 @@
+import type { AnatomyLayer } from '../types';
+
 /**
  * Generic anatomy template shared by components that don't have
  * a hand-crafted anatomy breakdown yet.
  *
  * Usage: GENERIC_ANATOMY('Ajax Bar')
  */
-export const GENERIC_ANATOMY = (componentName) => [
+export const GENERIC_ANATOMY = (componentName: string): AnatomyLayer[] => [
   {
     label: `${componentName} Main Frame`,
     role: `${componentName} 컴포넌트의 레이아웃을 잡아주고 배경이나 그림자를 부여하는 기본 뼈대입니다.`,

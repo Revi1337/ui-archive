@@ -1,6 +1,16 @@
 import { Box, X } from 'lucide-react';
+import type { LucideIcon } from 'lucide-react';
+import type { UIItem } from '../types';
 
-const NavGroup = ({ title, items, activeCategory, onSelect, icon: Icon }) => (
+interface NavGroupProps {
+  title: string;
+  items: UIItem[];
+  activeCategory: string;
+  onSelect: (id: string) => void;
+  icon: LucideIcon;
+}
+
+const NavGroup = ({ title, items, activeCategory, onSelect, icon: Icon }: NavGroupProps) => (
   <div className="nav-group">
     <div className="nav-title">{title}</div>
     <div className="nav-group-items">
@@ -18,7 +28,21 @@ const NavGroup = ({ title, items, activeCategory, onSelect, icon: Icon }) => (
   </div>
 );
 
-const Sidebar = ({ isOpen, onClose, activeCategory, onSelect, sections }) => (
+interface SidebarSection {
+  title: string;
+  items: UIItem[];
+  icon: LucideIcon;
+}
+
+interface SidebarProps {
+  isOpen: boolean;
+  onClose: () => void;
+  activeCategory: string;
+  onSelect: (id: string) => void;
+  sections: SidebarSection[];
+}
+
+const Sidebar = ({ isOpen, onClose, activeCategory, onSelect, sections }: SidebarProps) => (
   <aside className={`sidebar ${isOpen ? 'open' : ''}`}>
     <div className="sidebar-header">
       <div

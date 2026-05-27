@@ -1,8 +1,8 @@
 import {
-  ChevronDown, ArrowRight, ArrowLeft, Play, UploadCloud, Folder, File,
-  Minus, Check, Clock, Calendar, Search, Film, Video as VideoIcon, 
-  GripVertical, ToggleRight, Loader, List, ChevronUp, Image, Maximize,
-  FileText, Download, Upload, Plus, Music, Menu, Bell, ChevronRight, User, Sliders
+  ChevronDown, ArrowRight, Play, UploadCloud, Folder, File,
+  Check, Clock, Search, Film,
+  GripVertical, ToggleRight, Loader,
+  Plus, Menu, Bell, ChevronRight, User, Sliders
 } from 'lucide-react';
 
 export const SelectPreview = () => (

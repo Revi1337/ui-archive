@@ -1,4 +1,6 @@
-export const designEffectsData = [
+import type { UIItem } from "../types";
+
+export const designEffectsData: UIItem[] = [
   // 1. Textures & Styles
   {
     id: "fx-glassmorphism",

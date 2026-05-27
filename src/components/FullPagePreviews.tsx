@@ -1,10 +1,10 @@
 import {
-  Sparkles, ChevronDown, CheckCircle2, LayoutDashboard, Star, Box, 
-  ArrowRight, Users, Server, Activity, Search, Bell, Settings, 
-  ShoppingCart, Heart, Play, Mail, MapPin, Phone, Code, Cpu, Database, Globe,
-  Terminal, Copy, Check, FileText, ChevronRight, Hash, ExternalLink,
-  CreditCard, ArrowUpRight, ArrowDownRight, Send, Plus, DollarSign, Wallet,
-  Calendar, Filter, SlidersHorizontal, Navigation,
+  Sparkles, ChevronDown, CheckCircle2, LayoutDashboard, Star, Box,
+  ArrowRight, Search, Bell, Settings,
+  ShoppingCart, Heart, Play, MapPin, Code, Cpu, Database, Globe,
+  Terminal, Copy, FileText, ChevronRight, Hash,
+  CreditCard, ArrowUpRight, ArrowDownRight, Send, Plus, Wallet,
+  Calendar, SlidersHorizontal, Navigation,
   MessageCircle, Repeat, Share, MoreHorizontal, Image as ImageIcon, Smile,
   PlayCircle, Clock, BookOpen, MessageSquare, Award, MonitorPlay
 } from 'lucide-react';

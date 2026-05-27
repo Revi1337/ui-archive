@@ -1,9 +1,9 @@
 import { useState, useRef } from 'react';
-import { 
-  Box, Search, Bell, User, X, ArrowRight, Settings2, ShieldCheck, 
-  CheckCircle2, AlertCircle, Info, Star, ToggleRight, ChevronDown, 
+import {
+  Box, Search, Bell, User, X, ArrowRight, Settings2, ShieldCheck,
+  CheckCircle2, AlertCircle, Info, Star, ChevronDown,
   Menu, LayoutGrid, Heart, LayoutDashboard, Copy, Sparkles, Image as ImageIcon,
-  MoreVertical, Share2, CornerDownRight, HelpCircle,
+  MoreVertical, Share2, CornerDownRight,
   LayoutTemplate, Component
 } from 'lucide-react';
 
@@ -123,7 +123,7 @@ export const FormsPreview = () => (
             <label style={{ fontSize: '0.85rem', color: '#e2e8f0', fontWeight: 500, marginLeft: '4px' }}>Full Name</label>
             <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
               <User size={18} color="#94a3b8" style={{ position: 'absolute', left: '16px', zIndex: 1 }} />
-              <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '14px 16px 14px 44px', background: 'rgba(0, 0, 0, 0.2)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)' }} onFocus={(e) => { e.target.style.borderColor = '#6366f1'; e.target.style.boxShadow = '0 0 0 3px rgba(99,102,241,0.2)'; e.target.previousSibling.style.color = '#6366f1'; }} onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.1)'; e.target.previousSibling.style.color = '#94a3b8'; }} />
+              <input type="text" placeholder="John Doe" style={{ width: '100%', padding: '14px 16px 14px 44px', background: 'rgba(0, 0, 0, 0.2)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)' }} onFocus={(e) => { (e.target as HTMLElement).style.borderColor = '#6366f1'; (e.target as HTMLElement).style.boxShadow = '0 0 0 3px rgba(99,102,241,0.2)'; ((e.target as HTMLElement).previousSibling as HTMLElement).style.color = '#6366f1'; }} onBlur={(e) => { (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.1)'; (e.target as HTMLElement).style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.1)'; ((e.target as HTMLElement).previousSibling as HTMLElement).style.color = '#94a3b8'; }} />
             </div>
           </div>
           
@@ -145,29 +145,29 @@ export const FormsPreview = () => (
                 display: 'block' 
               }} 
               onFocus={(e) => { 
-                e.target.style.borderColor = '#10b981'; 
-                e.target.style.boxShadow = '0 0 0 3px rgba(16,185,129,0.2)'; 
-                e.target.nextElementSibling.style.color = '#10b981'; 
-                e.target.nextElementSibling.style.top = '0';
-                e.target.nextElementSibling.style.transform = 'translateY(-50%) scale(0.85)'; 
-                e.target.nextElementSibling.style.background = '#0e131f'; 
-                e.target.nextElementSibling.style.padding = '0 8px';
+                (e.target as HTMLElement).style.borderColor = '#10b981'; 
+                (e.target as HTMLElement).style.boxShadow = '0 0 0 3px rgba(16,185,129,0.2)'; 
+                ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.color = '#10b981'; 
+                ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.top = '0';
+                ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.transform = 'translateY(-50%) scale(0.85)'; 
+                ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.background = '#0e131f'; 
+                ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.padding = '0 8px';
               }} 
               onBlur={(e) => { 
-                e.target.style.borderColor = 'rgba(255,255,255,0.1)'; 
-                e.target.style.boxShadow = 'none'; 
+                (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.1)'; 
+                (e.target as HTMLElement).style.boxShadow = 'none'; 
                 if(!e.target.value) { 
-                  e.target.nextElementSibling.style.color = '#94a3b8'; 
-                  e.target.nextElementSibling.style.top = '50%';
-                  e.target.nextElementSibling.style.transform = 'translateY(-50%) scale(1)'; 
-                  e.target.nextElementSibling.style.background = 'transparent'; 
-                  e.target.nextElementSibling.style.padding = '0';
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.color = '#94a3b8'; 
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.top = '50%';
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.transform = 'translateY(-50%) scale(1)'; 
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.background = 'transparent'; 
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.padding = '0';
                 } else { 
-                  e.target.nextElementSibling.style.color = '#94a3b8'; 
-                  e.target.nextElementSibling.style.top = '0';
-                  e.target.nextElementSibling.style.transform = 'translateY(-50%) scale(0.85)'; 
-                  e.target.nextElementSibling.style.background = '#0e131f'; 
-                  e.target.nextElementSibling.style.padding = '0 8px';
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.color = '#94a3b8'; 
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.top = '0';
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.transform = 'translateY(-50%) scale(0.85)'; 
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.background = '#0e131f'; 
+                  ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.padding = '0 8px';
                 } 
               }} 
             />
@@ -199,7 +199,7 @@ export const FormsPreview = () => (
           </div>
 
           <div className="anatomy-layer" data-anatomy="Submit Action" style={{ marginTop: '16px' }}>
-            <button type="button" style={{ width: '100%', padding: '14px 20px', background: 'linear-gradient(135deg, #6366f1, #ec4899)', color: '#fff', borderRadius: '12px', border: 'none', fontWeight: 700, fontSize: '1.05rem', cursor: 'pointer', transition: 'all 0.2s ease', boxShadow: '0 10px 20px -5px rgba(236,72,153,0.4)' }} onMouseOver={(e) => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 15px 25px -5px rgba(236,72,153,0.5)'; }} onMouseOut={(e) => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 10px 20px -5px rgba(236,72,153,0.4)'; }}>
+            <button type="button" style={{ width: '100%', padding: '14px 20px', background: 'linear-gradient(135deg, #6366f1, #ec4899)', color: '#fff', borderRadius: '12px', border: 'none', fontWeight: 700, fontSize: '1.05rem', cursor: 'pointer', transition: 'all 0.2s ease', boxShadow: '0 10px 20px -5px rgba(236,72,153,0.4)' }} onMouseOver={(e) => { (e.target as HTMLElement).style.transform = 'translateY(-2px)'; (e.target as HTMLElement).style.boxShadow = '0 15px 25px -5px rgba(236,72,153,0.5)'; }} onMouseOut={(e) => { (e.target as HTMLElement).style.transform = 'translateY(0)'; (e.target as HTMLElement).style.boxShadow = '0 10px 20px -5px rgba(236,72,153,0.4)'; }}>
               Get Started Free
             </button>
           </div>
@@ -213,7 +213,7 @@ export const FormsPreview = () => (
       {/* Search Input Glow */}
       <div className="anatomy-layer" data-anatomy="Search Input Glow" style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
         <Search size={20} color="#a855f7" style={{ position: 'absolute', left: '20px', pointerEvents: 'none', zIndex: 1 }} />
-        <input type="text" placeholder="Search the galaxy..." style={{ width: '100%', padding: '18px 20px 18px 52px', background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(168, 85, 247, 0.3)', borderRadius: '32px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }} onFocus={(e) => { e.target.style.borderColor = '#a855f7'; e.target.style.boxShadow = '0 0 20px rgba(168,85,247,0.4), inset 0 0 10px rgba(168,85,247,0.1)'; e.target.style.background = 'rgba(15, 23, 42, 1)'; }} onBlur={(e) => { e.target.style.borderColor = 'rgba(168, 85, 247, 0.3)'; e.target.style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)'; e.target.style.background = 'rgba(15, 23, 42, 0.8)'; }} />
+        <input type="text" placeholder="Search the galaxy..." style={{ width: '100%', padding: '18px 20px 18px 52px', background: 'rgba(15, 23, 42, 0.8)', border: '1px solid rgba(168, 85, 247, 0.3)', borderRadius: '32px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: '0 4px 20px rgba(0,0,0,0.2)' }} onFocus={(e) => { (e.target as HTMLElement).style.borderColor = '#a855f7'; (e.target as HTMLElement).style.boxShadow = '0 0 20px rgba(168,85,247,0.4), inset 0 0 10px rgba(168,85,247,0.1)'; (e.target as HTMLElement).style.background = 'rgba(15, 23, 42, 1)'; }} onBlur={(e) => { (e.target as HTMLElement).style.borderColor = 'rgba(168, 85, 247, 0.3)'; (e.target as HTMLElement).style.boxShadow = '0 4px 20px rgba(0,0,0,0.2)'; (e.target as HTMLElement).style.background = 'rgba(15, 23, 42, 0.8)'; }} />
         <div style={{ position: 'absolute', right: '8px', display: 'flex', gap: '4px' }}>
           <kbd style={{ background: 'rgba(255,255,255,0.1)', color: '#94a3b8', padding: '4px 8px', borderRadius: '16px', fontSize: '0.75rem', fontWeight: 600 }}>⌘K</kbd>
         </div>
@@ -221,13 +221,13 @@ export const FormsPreview = () => (
 
       <div className="anatomy-layer" data-anatomy="Neumorphic Textarea" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <label style={{ fontSize: '0.85rem', color: '#e2e8f0', fontWeight: 500, marginLeft: '4px' }}>Bio</label>
-        <textarea placeholder="Tell us about yourself..." style={{ width: '100%', padding: '16px', background: '#1e2330', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', minHeight: '120px', resize: 'vertical', boxShadow: 'inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(255,255,255,0.02)', transition: 'border-color 0.3s' }} onFocus={(e) => e.target.style.borderColor = '#3b82f6'} onBlur={(e) => e.target.style.borderColor = 'rgba(255,255,255,0.05)'}></textarea>
+        <textarea placeholder="Tell us about yourself..." style={{ width: '100%', padding: '16px', background: '#1e2330', border: '1px solid rgba(255,255,255,0.05)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', minHeight: '120px', resize: 'vertical', boxShadow: 'inset 4px 4px 8px rgba(0,0,0,0.4), inset -4px -4px 8px rgba(255,255,255,0.02)', transition: 'border-color 0.3s' }} onFocus={(e) => (e.target as HTMLElement).style.borderColor = '#3b82f6'} onBlur={(e) => (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.05)'}></textarea>
         <span style={{ fontSize: '0.8rem', color: '#64748b', textAlign: 'right', fontWeight: 500 }}>0 / 500</span>
       </div>
 
       <div className="anatomy-layer" data-anatomy="Custom Select" style={{ display: 'flex', flexDirection: 'column', gap: '8px' }}>
         <label style={{ fontSize: '0.85rem', color: '#e2e8f0', fontWeight: 500, marginLeft: '4px' }}>Country</label>
-        <div style={{ padding: '16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', transition: 'background 0.2s', ':hover': { background: 'rgba(255,255,255,0.05)' } }} onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'} onMouseOut={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
+        <div style={{ padding: '16px', background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '12px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', cursor: 'pointer', transition: 'background 0.2s' }} onMouseOver={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.06)'} onMouseOut={(e) => e.currentTarget.style.background = 'rgba(255,255,255,0.03)'}>
           <span style={{ color: '#fff', display: 'flex', alignItems: 'center', gap: '12px', fontWeight: 500 }}>
             <span style={{ fontSize: '1.2rem' }}>🇺🇸</span> United States
           </span>
@@ -1330,7 +1330,7 @@ export const PageStickyPreview = () => (
 );
 
 export const PageScrollerPreview = () => {
-  const scrollRef = useRef(null);
+  const scrollRef = useRef<HTMLDivElement | null>(null);
   const [showScroller, setShowScroller] = useState(false);
 
   const handleScroll = () => {

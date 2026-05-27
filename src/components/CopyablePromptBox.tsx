@@ -1,6 +1,11 @@
 import { useState } from 'react';
 
-const CopyablePromptBox = ({ text, language }) => {
+interface CopyablePromptBoxProps {
+  text: string;
+  language?: string;
+}
+
+const CopyablePromptBox = ({ text, language }: CopyablePromptBoxProps) => {
   const [copied, setCopied] = useState(false);
   const handleCopy = () => {
     navigator.clipboard.writeText(text);

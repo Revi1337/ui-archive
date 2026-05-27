@@ -1,4 +1,4 @@
-import { Sparkles, ChevronDown, Component, CheckCircle2, LayoutDashboard, Star, Box, ArrowRight, Code, Cpu, Database, Globe, Users, Server, Activity, ListOrdered, Image as ImageIcon, Calendar, MapPin, Mail, Phone, Send, Award, Shield, Medal, TrendingUp, ArrowUpRight, CircleDot, Flag, Calculator, DollarSign, AtSign, Bell, X, Info, Megaphone, AlertTriangle, RefreshCw, Plus, Check, MessageCircle, Briefcase, Camera, Video } from 'lucide-react';
+import { Sparkles, ChevronDown, Component, CheckCircle2, LayoutDashboard, Star, Box, ArrowRight, Code, Cpu, Database, Globe, Users, Server, Activity, ListOrdered, Image as ImageIcon, Calendar, MapPin, Mail, Phone, Send, Award, TrendingUp, ArrowUpRight, DollarSign, AtSign, X, Megaphone, AlertTriangle, RefreshCw, Plus, Check, MessageCircle, Briefcase } from 'lucide-react';
 export const HeroPreview = () => (
   <div className="anatomy-layer" data-anatomy="Hero Section" style={{ height: '100%', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', textAlign: 'center', padding: '40px' }}>
     <div className="anatomy-layer" data-anatomy="Social Proof" style={{ background: 'rgba(255,255,255,0.05)', padding: '8px 16px', borderRadius: '24px', marginBottom: '24px', display: 'flex', alignItems: 'center', gap: '8px', border: '1px solid rgba(255,255,255,0.1)' }}>
@@ -372,7 +372,7 @@ export const AwardsCertificationsPreview = () => (
       <div style={{ position: 'absolute', top: 0, bottom: 0, left: 0, width: '150px', background: 'linear-gradient(to right, #0f1115, transparent)', zIndex: 2 }} />
       <div style={{ position: 'absolute', top: 0, bottom: 0, right: 0, width: '150px', background: 'linear-gradient(to left, #0f1115, transparent)', zIndex: 2 }} />
       <div style={{ display: 'flex', gap: '32px', animation: 'logo-scroll 15s linear infinite' }}>
-        {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((item, i) => (
+        {[1, 2, 3, 4, 5, 1, 2, 3, 4, 5].map((_item, i) => (
           <div key={i} className="anatomy-layer" data-anatomy="Metallic Badge" style={{ minWidth: '240px', height: '100px', background: 'linear-gradient(135deg, rgba(255,255,255,0.1), rgba(255,255,255,0.02))', border: '1px solid rgba(255,255,255,0.2)', borderRadius: '16px', display: 'flex', alignItems: 'center', padding: '24px', gap: '16px', boxShadow: 'inset 0 0 20px rgba(255,255,255,0.05), 0 8px 24px rgba(0,0,0,0.4)', backdropFilter: 'blur(8px)' }}>
             <div style={{ width: '48px', height: '48px', borderRadius: '50%', background: 'linear-gradient(135deg, #fbbf24, #d97706)', display: 'flex', alignItems: 'center', justifyContent: 'center', boxShadow: '0 4px 12px rgba(217,119,6,0.4)' }}>
               <Award size={24} color="#fff" />

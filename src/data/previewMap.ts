@@ -1,3 +1,5 @@
+import type { PreviewMap } from '../types';
+
 import {
   TwoColumnPreview, SplitScreenPreview, AsymmetricalPreview, FShapePreview,
   ZShapePreview, CardBlockPreview, FeaturedMediaPreview, MasonryPreview,
@@ -59,7 +61,7 @@ import {
   RealEstateBookingPreview, SocialFeedPreview, ELearningLMSPreview
 } from '../components/FullPagePreviews';
 
-export const PREVIEW_MAP = {
+export const PREVIEW_MAP: PreviewMap = {
   // Getting Started
   'introduction': IntroductionPreview,
   // Page Layout Sections

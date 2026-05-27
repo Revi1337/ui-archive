@@ -1,3 +1,4 @@
+import type React from 'react';
 import { useRef, useState } from 'react';
 
 // ==========================================
@@ -9,7 +10,7 @@ export const MicroAnimationsPreview = () => (
     <div className="anatomy-layer" data-anatomy="State Change Trigger" style={{ position: 'relative' }}>
       <button style={{
         padding: '16px', borderRadius: '50%', border: 'none', background: '#fff', boxShadow: '0 4px 6px rgba(0,0,0,0.1)', cursor: 'pointer', outline: 'none'
-      }} onMouseOver={(e) => e.currentTarget.children[0].style.transform = 'rotate(15deg) scale(1.1)'} onMouseOut={(e) => e.currentTarget.children[0].style.transform = 'rotate(0) scale(1)'}>
+      }} onMouseOver={(e) => (e.currentTarget.children[0] as HTMLElement).style.transform = 'rotate(15deg) scale(1.1)'} onMouseOut={(e) => (e.currentTarget.children[0] as HTMLElement).style.transform = 'rotate(0) scale(1)'}>
         <div style={{ fontSize: '2rem', transition: 'transform 0.3s cubic-bezier(0.175, 0.885, 0.32, 1.275)' }}>🔔</div>
       </button>
       <div className="anatomy-layer" data-anatomy="Easing Curve" style={{ position: 'absolute', top: '-5px', right: '-5px', width: '12px', height: '12px', background: '#ef4444', borderRadius: '50%', animation: 'ping 1.5s cubic-bezier(0, 0, 0.2, 1) infinite' }} />
@@ -25,7 +26,7 @@ export const ParallaxPreview = () => {
     <div 
       className="anatomy-layer" data-anatomy="Speed Multipliers" 
       style={{ width: '100%', height: '400px', background: '#0f172a', borderRadius: 'inherit', position: 'relative', overflowY: 'auto' }}
-      onScroll={(e) => setScrollY(e.target.scrollTop)}
+      onScroll={(e) => setScrollY((e.target as HTMLElement).scrollTop)}
     >
       <div style={{ height: '800px', position: 'relative' }}>
         <div style={{ position: 'absolute', top: '10%', left: '15%', width: '150px', height: '150px', background: '#3b82f6', borderRadius: '50%', opacity: 0.4, filter: 'blur(20px)', transform: `translateY(${scrollY * 0.2}px)` }} />
@@ -68,10 +69,10 @@ export const CustomCursorPreview = () => (
 );
 
 export const MagneticButtonsPreview = () => {
-  const buttonRef = useRef(null);
+  const buttonRef = useRef<HTMLButtonElement | null>(null);
   const [position, setPosition] = useState({ x: 0, y: 0 });
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent) => {
     if (!buttonRef.current) return;
     const { left, top, width, height } = buttonRef.current.getBoundingClientRect();
     const centerX = left + width / 2;

@@ -3,6 +3,8 @@ import { ArrowUp } from 'lucide-react';
 import CopyablePromptBox from './CopyablePromptBox';
 import DynamicPreview from './DynamicPreview';
 import { koTranslations } from '../data/koTranslations';
+import type React from 'react';
+import type { UIItem, PreviewMap } from '../types';
 
 // ---------------------------------------------------------------------------
 // Pure utility functions (outside component — no purity rule violations)
@@ -11,16 +13,16 @@ import { koTranslations } from '../data/koTranslations';
 /**
  * Animate an element's scrollTop from `start` to `target` over `duration` ms.
  * Uses exponential ease-out.
- *
- * @param {HTMLElement} container
- * @param {number} start   - initial scrollTop
- * @param {number} target  - desired scrollTop
- * @param {number} duration - animation duration in ms
  */
-function animateScrollTo(container, start, target, duration) {
+function animateScrollTo(
+  container: HTMLElement,
+  start: number,
+  target: number,
+  duration: number,
+) {
   const startTime = performance.now();
 
-  const step = (currentTime) => {
+  const step = (currentTime: number) => {
     const elapsed = currentTime - startTime;
     const progress = Math.min(elapsed / duration, 1);
     const easeProgress = progress === 1 ? 1 : 1 - Math.pow(2, -10 * progress);
@@ -35,15 +37,31 @@ function animateScrollTo(container, start, target, duration) {
 // Component
 // ---------------------------------------------------------------------------
 
-const AllInOneGuide = ({ title, description, itemsData, previewMap, FallbackComponent = DynamicPreview, containerRef }) => {
+interface AllInOneGuideProps {
+  title: string;
+  description: string;
+  itemsData: UIItem[];
+  previewMap?: PreviewMap;
+  FallbackComponent?: React.ComponentType<{ item: UIItem }>;
+  containerRef?: React.RefObject<HTMLDivElement | null>;
+}
+
+const AllInOneGuide = ({
+  title,
+  description,
+  itemsData,
+  previewMap,
+  FallbackComponent = DynamicPreview,
+  containerRef,
+}: AllInOneGuideProps) => {
   const [showScroll, setShowScroll] = useState(false);
 
   useEffect(() => {
     const playground = containerRef?.current;
     if (!playground) return;
 
-    const handleScroll = (e) => {
-      setShowScroll(e.target.scrollTop > 500);
+    const handleScroll = (e: Event) => {
+      setShowScroll((e.target as HTMLElement).scrollTop > 500);
     };
 
     playground.addEventListener('scroll', handleScroll);
@@ -56,7 +74,7 @@ const AllInOneGuide = ({ title, description, itemsData, previewMap, FallbackComp
     animateScrollTo(playground, playground.scrollTop, 0, 250);
   };
 
-  const scrollToComponent = (id) => {
+  const scrollToComponent = (id: string) => {
     const element = document.getElementById(id);
     const playground = containerRef?.current;
     if (!element || !playground) return;

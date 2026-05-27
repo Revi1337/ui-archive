@@ -1,4 +1,6 @@
-export const fullPageTemplates = [
+import type { UIItem } from "../../types";
+
+export const fullPageTemplates: UIItem[] = [
   {
     "id": "saas-landing",
     "group": "Full Page Templates",

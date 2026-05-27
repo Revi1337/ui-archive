@@ -1,8 +1,8 @@
 import {
-  List, Table, Menu as MenuIcon, Monitor, CheckCircle, Image as ImageIcon,
-  Edit2, Maximize2, RefreshCw, User, Bell, AlertTriangle, Play,
-  Square, FileText, Component, Search, ChevronLeft, ChevronRight, Check,
-  Sliders, Maximize, Layout, ScrollText, Eye, Circle, Star, ArrowUp, Plus
+  Menu as MenuIcon, Monitor, CheckCircle,
+  Edit2, Maximize2, User, Bell, AlertTriangle,
+  Component, ChevronLeft, ChevronRight,
+  Circle, Star, ArrowUp, Plus
 } from 'lucide-react';
 
 export const ListPreview = () => (
@@ -10,7 +10,7 @@ export const ListPreview = () => (
     <div className="anatomy-layer" data-anatomy="List Container" style={{ width: '100%', maxWidth: '400px', background: 'rgba(20,24,32,0.8)', border: '1px solid rgba(255,255,255,0.1)', borderRadius: '16px', overflow: 'hidden' }}>
       <div style={{ padding: '16px 24px', borderBottom: '1px solid rgba(255,255,255,0.05)', color: '#fff', fontWeight: 600 }}>Recent Activity</div>
       {[1, 2, 3].map((i) => (
-        <div key={i} className="anatomy-layer" data-anatomy="List Item" style={{ padding: '16px 24px', display: 'flex', gap: '16px', alignItems: 'center', borderBottom: i !== 3 ? '1px solid rgba(255,255,255,0.05)' : 'none', cursor: 'pointer', ':hover': { background: 'rgba(255,255,255,0.02)' } }}>
+        <div key={i} className="anatomy-layer" data-anatomy="List Item" style={{ padding: '16px 24px', display: 'flex', gap: '16px', alignItems: 'center', borderBottom: i !== 3 ? '1px solid rgba(255,255,255,0.05)' : 'none', cursor: 'pointer' }}>
           <div style={{ width: '40px', height: '40px', borderRadius: '50%', background: `hsl(${i * 120}, 70%, 20%)`, display: 'flex', alignItems: 'center', justifyContent: 'center' }}>
             <User size={18} color={`hsl(${i * 120}, 70%, 60%)`} />
           </div>
@@ -240,7 +240,7 @@ export const FormPreview = () => (
           <label style={{ fontSize: '0.85rem', color: '#e2e8f0', fontWeight: 500, marginLeft: '4px' }}>Full Name</label>
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
             <User size={18} color="#94a3b8" style={{ position: 'absolute', left: '16px' }} />
-            <input type="text" className="anatomy-layer" data-anatomy="Interactive Zone" placeholder="John Doe" style={{ width: '100%', padding: '14px 16px 14px 44px', background: 'rgba(0, 0, 0, 0.2)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)' }} onFocus={(e) => { e.target.style.borderColor = '#6366f1'; e.target.style.boxShadow = '0 0 0 3px rgba(99,102,241,0.2)'; }} onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.1)'; }} />
+            <input type="text" className="anatomy-layer" data-anatomy="Interactive Zone" placeholder="John Doe" style={{ width: '100%', padding: '14px 16px 14px 44px', background: 'rgba(0, 0, 0, 0.2)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)' }} onFocus={(e) => { (e.target as HTMLElement).style.borderColor = '#6366f1'; (e.target as HTMLElement).style.boxShadow = '0 0 0 3px rgba(99,102,241,0.2)'; }} onBlur={(e) => { (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.1)'; (e.target as HTMLElement).style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.1)'; }} />
           </div>
         </div>
         
@@ -248,12 +248,12 @@ export const FormPreview = () => (
           <label style={{ fontSize: '0.85rem', color: '#e2e8f0', fontWeight: 500, marginLeft: '4px' }}>Email Address</label>
           <div style={{ position: 'relative', display: 'flex', alignItems: 'center' }}>
             <span style={{ position: 'absolute', left: '16px', color: '#94a3b8', fontSize: '1.1rem', fontWeight: 'bold' }}>@</span>
-            <input type="email" className="anatomy-layer" data-anatomy="Interactive Zone" placeholder="john@example.com" style={{ width: '100%', padding: '14px 16px 14px 44px', background: 'rgba(0, 0, 0, 0.2)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)' }} onFocus={(e) => { e.target.style.borderColor = '#6366f1'; e.target.style.boxShadow = '0 0 0 3px rgba(99,102,241,0.2)'; }} onBlur={(e) => { e.target.style.borderColor = 'rgba(255,255,255,0.1)'; e.target.style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.1)'; }} />
+            <input type="email" className="anatomy-layer" data-anatomy="Interactive Zone" placeholder="john@example.com" style={{ width: '100%', padding: '14px 16px 14px 44px', background: 'rgba(0, 0, 0, 0.2)', border: '1px solid rgba(255, 255, 255, 0.1)', borderRadius: '12px', color: '#fff', fontSize: '1rem', outline: 'none', transition: 'all 0.3s ease', boxShadow: 'inset 0 2px 4px rgba(0,0,0,0.1)' }} onFocus={(e) => { (e.target as HTMLElement).style.borderColor = '#6366f1'; (e.target as HTMLElement).style.boxShadow = '0 0 0 3px rgba(99,102,241,0.2)'; }} onBlur={(e) => { (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.1)'; (e.target as HTMLElement).style.boxShadow = 'inset 0 2px 4px rgba(0,0,0,0.1)'; }} />
           </div>
         </div>
 
         <div style={{ marginTop: '12px' }}>
-          <button type="submit" className="anatomy-layer" data-anatomy="Interactive Zone" style={{ width: '100%', padding: '14px 20px', background: 'linear-gradient(135deg, #6366f1, #ec4899)', color: '#fff', borderRadius: '12px', border: 'none', fontWeight: 700, fontSize: '1.05rem', cursor: 'pointer', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 10px 20px -5px rgba(236,72,153,0.4)' }} onMouseOver={(e) => { e.target.style.transform = 'translateY(-2px)'; e.target.style.boxShadow = '0 15px 25px -5px rgba(236,72,153,0.5)'; }} onMouseOut={(e) => { e.target.style.transform = 'translateY(0)'; e.target.style.boxShadow = '0 10px 20px -5px rgba(236,72,153,0.4)'; }}>
+          <button type="submit" className="anatomy-layer" data-anatomy="Interactive Zone" style={{ width: '100%', padding: '14px 20px', background: 'linear-gradient(135deg, #6366f1, #ec4899)', color: '#fff', borderRadius: '12px', border: 'none', fontWeight: 700, fontSize: '1.05rem', cursor: 'pointer', transition: 'transform 0.2s, box-shadow 0.2s', boxShadow: '0 10px 20px -5px rgba(236,72,153,0.4)' }} onMouseOver={(e) => { (e.target as HTMLElement).style.transform = 'translateY(-2px)'; (e.target as HTMLElement).style.boxShadow = '0 15px 25px -5px rgba(236,72,153,0.5)'; }} onMouseOut={(e) => { (e.target as HTMLElement).style.transform = 'translateY(0)'; (e.target as HTMLElement).style.boxShadow = '0 10px 20px -5px rgba(236,72,153,0.4)'; }}>
             Get Started Free
           </button>
         </div>
@@ -331,29 +331,29 @@ export const InputPreview = () => (
             display: 'block' 
           }} 
           onFocus={(e) => { 
-            e.target.style.borderColor = '#10b981'; 
-            e.target.style.boxShadow = '0 0 0 3px rgba(16,185,129,0.2)'; 
-            e.target.nextElementSibling.style.color = '#10b981'; 
-            e.target.nextElementSibling.style.top = '0';
-            e.target.nextElementSibling.style.transform = 'translateY(-50%) scale(0.85)'; 
-            e.target.nextElementSibling.style.background = '#111827'; 
-            e.target.nextElementSibling.style.padding = '0 8px';
+            (e.target as HTMLElement).style.borderColor = '#10b981'; 
+            (e.target as HTMLElement).style.boxShadow = '0 0 0 3px rgba(16,185,129,0.2)'; 
+            ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.color = '#10b981'; 
+            ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.top = '0';
+            ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.transform = 'translateY(-50%) scale(0.85)'; 
+            ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.background = '#111827'; 
+            ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.padding = '0 8px';
           }} 
           onBlur={(e) => { 
-            e.target.style.borderColor = 'rgba(255,255,255,0.1)'; 
-            e.target.style.boxShadow = 'none'; 
+            (e.target as HTMLElement).style.borderColor = 'rgba(255,255,255,0.1)'; 
+            (e.target as HTMLElement).style.boxShadow = 'none'; 
             if(!e.target.value) { 
-              e.target.nextElementSibling.style.color = '#94a3b8'; 
-              e.target.nextElementSibling.style.top = '50%';
-              e.target.nextElementSibling.style.transform = 'translateY(-50%) scale(1)'; 
-              e.target.nextElementSibling.style.background = 'transparent'; 
-              e.target.nextElementSibling.style.padding = '0';
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.color = '#94a3b8'; 
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.top = '50%';
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.transform = 'translateY(-50%) scale(1)'; 
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.background = 'transparent'; 
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.padding = '0';
             } else { 
-              e.target.nextElementSibling.style.color = '#94a3b8'; 
-              e.target.nextElementSibling.style.top = '0';
-              e.target.nextElementSibling.style.transform = 'translateY(-50%) scale(0.85)'; 
-              e.target.nextElementSibling.style.background = '#111827'; 
-              e.target.nextElementSibling.style.padding = '0 8px';
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.color = '#94a3b8'; 
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.top = '0';
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.transform = 'translateY(-50%) scale(0.85)'; 
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.background = '#111827'; 
+              ((e.target as HTMLElement).nextElementSibling as HTMLElement).style.padding = '0 8px';
             } 
           }} 
         />
@@ -476,7 +476,7 @@ export const RangePreview = () => (
 export const ResizeObserverPreview = () => (
   <div style={{ padding: '64px', height: '100%', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
     <div className="anatomy-layer" data-anatomy="Resizable Container" style={{ width: '300px', height: '200px', border: '2px dashed #00f0ff', borderRadius: '12px', display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', position: 'relative', resize: 'both', overflow: 'hidden' }}>
-      <Maximize size={32} color="#00f0ff" style={{ marginBottom: '16px' }} />
+      <Maximize2 size={32} color="#00f0ff" style={{ marginBottom: '16px' }} />
       <div style={{ color: '#fff', fontWeight: 600 }}>Width: 300px</div>
       <div style={{ color: '#fff', fontWeight: 600 }}>Height: 200px</div>
       <div style={{ position: 'absolute', bottom: '0', right: '0', width: '20px', height: '20px', background: 'linear-gradient(135deg, transparent 50%, rgba(0,240,255,0.5) 50%)', cursor: 'nwse-resize' }} />

@@ -1,4 +1,6 @@
-export const pageLayouts = [
+import type { UIItem } from "../../types";
+
+export const pageLayouts: UIItem[] = [
   {
     "id": "basic-layout",
     "group": "Page Layouts",

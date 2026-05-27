@@ -1,3 +1,5 @@
+import type React from 'react';
+import type { UIItem } from '../types';
 import {
   AuroraFluidPreview, DuotonePreview, MonochromaticPreview, DarkLightModePreview, GlowNeonPreview, ColorSplashingPreview,
   BentoGridPreview, ZAxisLayeringPreview, SplitScreenPreview, MasonryLayoutPreview, StickyFloatingPreview
@@ -13,7 +15,7 @@ import {
 } from './effects/GraphicsTechExperimentalPreviews';
 
 // Placeholder for un-implemented effects
-export const DynamicDesignEffect = ({ item }) => {
+export const DynamicDesignEffect = ({ item }: { item: UIItem }) => {
   // Generate a distinct hue based on the item id length or char codes
   const hue = item ? (item.id.split('').reduce((acc, char) => acc + char.charCodeAt(0), 0) * 13) % 360 : 0;
 
@@ -247,7 +249,7 @@ export const GlitchEffectPreview = () => (
 );
 
 // Export Map
-const DesignEffectsPreviews = {
+const DesignEffectsPreviews: Record<string, () => React.ReactElement> = {
   // Existing from this file
   'fx-glassmorphism': GlassmorphismPreview,
   'fx-mesh-gradient': MeshGradientPreview,

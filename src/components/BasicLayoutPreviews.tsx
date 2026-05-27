@@ -1,14 +1,15 @@
+import type React from 'react';
 import { useState, useRef } from 'react';
 import {
-  Box, LayoutTemplate, Image as ImageIcon, AlignLeft,
-  Columns, LayoutGrid, Maximize, PlayCircle, Menu, User,
+  Box, Image as ImageIcon,
+  LayoutGrid, PlayCircle, Menu, User,
   Search, ArrowRight, Layers, Settings2, Bell, ShoppingCart,
-  Star, Heart, Share2, ShieldCheck, Zap, ChevronRight, Activity,
-  Home, Compass, MessageCircle, FileText, ChevronDown, BookOpen, 
-  List, Bookmark, CheckCircle, ArrowLeft, MoreHorizontal, Hash
+  Star, Heart, Share2, ShieldCheck, Zap, Activity,
+  Home, MessageCircle, BookOpen,
+  List, CheckCircle, ArrowLeft,
 } from 'lucide-react';
 
-export const MockupBrowser = ({ children }) => (
+export const MockupBrowser = ({ children }: { children: React.ReactNode }) => (
   <div style={{ width: '100%', height: '100%', minHeight: '800px', display: 'flex', flexDirection: 'column', background: 'rgba(15, 17, 21, 0.9)', borderRadius: '16px', overflow: 'hidden', border: '1px solid rgba(255,255,255,0.1)', boxShadow: '0 32px 64px rgba(0,0,0,0.5)' }}>
     <div style={{ height: '40px', background: 'rgba(255,255,255,0.05)', borderBottom: '1px solid rgba(255,255,255,0.1)', display: 'flex', alignItems: 'center', padding: '0 16px', gap: '8px', zIndex: 50 }}>
       <div style={{ width: '12px', height: '12px', borderRadius: '50%', background: '#ff5f56' }} />
@@ -570,9 +571,9 @@ export const HiddenNavPreview = () => (
 
 export const InteractivePreview = () => {
   const [rotation, setRotation] = useState({ x: 0, y: 0 });
-  const cardRef = useRef(null);
+  const cardRef = useRef<HTMLDivElement | null>(null);
 
-  const handleMouseMove = (e) => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
     if (!cardRef.current) return;
     const card = cardRef.current;
     const rect = card.getBoundingClientRect();

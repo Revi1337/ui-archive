@@ -1,10 +1,12 @@
 import { useRef, useEffect, useMemo, useState } from 'react';
+import type React from 'react';
 import { usePersistedState } from './hooks/usePersistedState';
 import { useAnatomyMode } from './hooks/useAnatomyMode';
 import { uiData } from './data/uiData';
 import { designEffectsData } from './data/designEffectsData';
 import { PREVIEW_MAP } from './data/previewMap';
 import { Component, MousePointer2, Info, PanelsTopLeft, LayoutTemplate, Sparkles, AppWindow, Menu } from 'lucide-react';
+import type { UIItem } from './types';
 
 import AllInOneGuide from './components/AllInOneGuide';
 import DynamicPreview from './components/DynamicPreview';
@@ -16,7 +18,9 @@ const LAYOUT_SECTIONS = uiData.filter(c => c.group === 'Page Layout Sections');
 const UI_COMPONENTS_DATA = uiData.filter(c => c.group === 'UI Components & Form Controls');
 const BASIC_LAYOUTS = uiData.filter(c => c.group === 'Page Layouts');
 const FULL_PAGE_TEMPLATES = uiData.filter(c => c.group === 'Full Page Templates');
-const UI_COMPONENTS_SIDEBAR = [{ id: 'all-ui-components', title: 'All-in-one Style Guide' }];
+const UI_COMPONENTS_SIDEBAR: UIItem[] = [
+  { id: 'all-ui-components', title: 'All-in-one Style Guide', group: 'UI Components & Form Controls', description: '', prompt: '', anatomy: [] }
+];
 
 const ALL_DESIGN_EFFECTS_GROUPS = [
   'Textures & Styles', 'Colors & Backgrounds', 'Layout & Structure',
@@ -24,7 +28,11 @@ const ALL_DESIGN_EFFECTS_GROUPS = [
   'Technical FX', 'Experimental'
 ];
 
-function resolvePreview(activeCategory, currentData, containerRef) {
+function resolvePreview(
+  activeCategory: string,
+  currentData: UIItem,
+  containerRef: React.RefObject<HTMLDivElement | null>,
+): React.ReactNode {
   if (activeCategory === 'all-ui-components') {
     return (
       <AllInOneGuide
@@ -69,7 +77,10 @@ export default function App() {
         id: `all-fx-${groupName.replace(/ /g, '-').toLowerCase()}`,
         title: groupName,
         group: groupName,
-      })),
+        description: '',
+        prompt: '',
+        anatomy: [],
+      })) as UIItem[],
     []
   );
 
@@ -77,16 +88,16 @@ export default function App() {
   const allData = useMemo(() => [...uiData, ...designEffectsData], []);
 
   // Determine current active data
-  const currentData = useMemo(() => {
+  const currentData = useMemo((): UIItem => {
     if (activeCategory === 'all-ui-components') {
-      return { id: 'all-ui-components', title: 'UI Components All-in-one', description: '모든 UI 컴포넌트와 폼 요소를 한 곳에서 빠르게 탐색합니다.', anatomy: [] };
+      return { id: 'all-ui-components', title: 'UI Components All-in-one', group: 'UI Components & Form Controls', description: '모든 UI 컴포넌트와 폼 요소를 한 곳에서 빠르게 탐색합니다.', prompt: '', anatomy: [] };
     }
     if (activeCategory.startsWith('all-fx-')) {
       const matchedItem = designEffectsItems.find(item => item.id === activeCategory);
       const realGroupName = matchedItem ? matchedItem.title : activeCategory.replace('all-fx-', '').replace(/-/g, ' ');
-      return { id: activeCategory, title: `${realGroupName} Effects`, description: `${realGroupName} 관련 모든 디자인 효과를 탐색합니다.`, anatomy: [], group: realGroupName };
+      return { id: activeCategory, title: `${realGroupName} Effects`, description: `${realGroupName} 관련 모든 디자인 효과를 탐색합니다.`, anatomy: [], group: realGroupName, prompt: '' };
     }
-    return allData.find(c => c.id === activeCategory) || uiData[0];
+    return allData.find(c => c.id === activeCategory) ?? uiData[0];
   }, [activeCategory, designEffectsItems, allData]);
 
   const {
@@ -99,7 +110,7 @@ export default function App() {
     handleMouseLeave,
   } = useAnatomyMode(currentData);
 
-  const playgroundAreaRef = useRef(null);
+  const playgroundAreaRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     const id = setTimeout(() => {
@@ -123,11 +134,11 @@ export default function App() {
         <div className="tooltip-title">
           <Component size={16} /> <span ref={tooltipTitleRef}>Title</span>
         </div>
-        <div className="tooltip-role" ref={tooltipRoleRef}>Role description</div>
+        <div className="tooltip-role" ref={tooltipRoleRef as React.RefObject<HTMLDivElement | null>}>Role description</div>
       </div>
 
       {/* Sidebar Overlay for Mobile */}
-      <div 
+      <div
         className={`sidebar-overlay ${isSidebarOpen ? 'open' : ''}`}
         onClick={() => setIsSidebarOpen(false)}
       />

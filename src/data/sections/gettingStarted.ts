@@ -1,4 +1,6 @@
-export const gettingStarted = [
+import type { UIItem } from "../../types";
+
+export const gettingStarted: UIItem[] = [
   {
     "id": "introduction",
     "group": "Getting Started",

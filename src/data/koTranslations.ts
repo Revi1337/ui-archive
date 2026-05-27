@@ -1,4 +1,4 @@
-export const koTranslations = {
+export const koTranslations: Record<string, string> = {
   "A preview of the Option Group component showing various states and styles.": "Option Group 컴포넌트의 다양한 상태와 스타일을 보여주는 미리보기입니다.",
   "A preview of the Slide Transition component showing various states and styles.": "Slide Transition 컴포넌트의 다양한 상태와 스타일을 보여주는 미리보기입니다.",
   "Full-bleed featured image layout. Cinematic dark background image with center-aligned white overlay text and glass buttons.": "풀 블리드 피처드 이미지 레이아웃. 중앙 정렬된 흰색 오버레이 텍스트와 유리 버튼이 있는 시네마틱한 어두운 배경 이미지입니다.",

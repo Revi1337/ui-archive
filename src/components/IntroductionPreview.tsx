@@ -1,4 +1,17 @@
+import type React from 'react';
+import type { LucideIcon } from 'lucide-react';
 import { LayoutTemplate, Layers, Component, ArrowRight, Terminal, Bot, AppWindow, Palette } from 'lucide-react';
+
+interface StepCardProps {
+  anatomyKey: string;
+  icon: LucideIcon;
+  color: string;
+  bgColor: string;
+  label: string;
+  subtitle: string;
+  description: React.ReactNode;
+  arrowColor?: string | null;
+}
 
 const STEPS = [
   {
@@ -63,7 +76,7 @@ const STEPS = [
   },
 ];
 
-const StepCard = ({ anatomyKey, icon: Icon, color, bgColor, label, subtitle, description }) => (
+const StepCard = ({ anatomyKey, icon: Icon, color, bgColor, label, subtitle, description }: StepCardProps) => (
   <div className="anatomy-layer" data-anatomy={anatomyKey} style={{ background: 'rgba(255,255,255,0.03)', border: '1px solid rgba(255,255,255,0.08)', borderRadius: '24px', padding: '40px', position: 'relative', overflow: 'hidden' }}>
     <div style={{ position: 'absolute', top: '50%', transform: 'translateY(-50%)', right: '32px', opacity: 0.05, pointerEvents: 'none' }}>
       <Icon size={200} />

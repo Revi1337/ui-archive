@@ -1,6 +1,12 @@
 import { Component, CheckCircle2, Sparkles } from 'lucide-react';
+import type { UIItem } from '../types';
 
-const DynamicPreviewHeader = ({ title, description }) => (
+interface DynamicPreviewHeaderProps {
+  title: string;
+  description: string;
+}
+
+const DynamicPreviewHeader = ({ title, description }: DynamicPreviewHeaderProps) => (
   <div style={{ textAlign: 'center', marginBottom: '48px', width: '100%' }}>
     <h2 className="anatomy-layer" data-anatomy="Component Title" style={{ fontSize: '2.5rem', fontWeight: 800, marginBottom: '16px', background: 'linear-gradient(to right, #60a5fa, #c084fc)', WebkitBackgroundClip: 'text', WebkitTextFillColor: 'transparent' }}>
       {title}
@@ -11,14 +17,18 @@ const DynamicPreviewHeader = ({ title, description }) => (
   </div>
 );
 
-const GROUP_LAYOUT_MAP = {
+const GROUP_LAYOUT_MAP: Record<string, number> = {
   'Getting Started': 0,
   'Page Layout Sections': 1,
   'UI Components & Form Controls': 2,
   'Full Page Templates': 3,
 };
 
-const DynamicPreview = ({ item }) => {
+interface DynamicPreviewProps {
+  item: UIItem;
+}
+
+const DynamicPreview = ({ item }: DynamicPreviewProps) => {
   if (!item) return null;
 
   const layoutType = GROUP_LAYOUT_MAP[item.group] ?? (item.id.length % 4);

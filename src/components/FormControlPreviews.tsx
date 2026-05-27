@@ -1,9 +1,9 @@
 import {
-  ChevronRight, ChevronDown, Check, X, Search, Settings,
-  Menu, MoreVertical, Plus, Edit2, Trash2, Heart,
-  Share2, Maximize, Play, Pause, SkipForward,
-  MessageCircle, Paperclip, Smile, Image as ImageIcon,
-  CheckCircle2, AlertCircle, ChevronLeft
+  ChevronRight, ChevronDown, Check, X, Settings,
+  Menu, Plus, Edit2, Trash2,
+  Share2,
+  Paperclip, Image as ImageIcon,
+  AlertCircle, ChevronLeft
 } from 'lucide-react';
 
 export const AjaxBarPreview = () => (
