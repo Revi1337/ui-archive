@@ -1,0 +1,145 @@
+--- src/data/uiData.js
++++ src/data/uiData.js
+@@ -102,6 +102,126 @@
+         { id: 'terms-privacy', label: 'Terms & Privacy', type: 'typography', role: '이용약관, 개인정보 처리방침 등 서비스 운영의 법적 필수 문서들로 연결합니다.' }
+       ]
+     }
++    ,
++    // 3. Basic Web Layouts (Full Pages)
++    {
++      id: 'two-column',
++      group: 'Basic Web Layouts',
++      title: 'Two-column Layout',
++      description: '화면을 좌/우 두 개의 주요 단으로 나누는 레이아웃',
++      prompt: 'Full page two-column layout with a 30% width sidebar on the left and 70% content area on the right. Glassmorphism styling.',
++      anatomy: [
++        { id: 'layout-sidebar', label: 'Left Sidebar', type: 'section', role: '메뉴, 필터, 또는 프로필 정보 등 부가적인 탐색 기능을 제공합니다.' },
++        { id: 'layout-content', label: 'Main Content Area', type: 'section', role: '페이지의 핵심 정보(글, 피드, 상품 목록)가 길게 스크롤되는 영역입니다.' }
++      ]
++    },
++    {
++      id: 'split-screen',
++      group: 'Basic Web Layouts',
++      title: 'Split Screen Layout',
++      description: '화면을 정확히 5:5로 분할하는 레이아웃',
++      prompt: '50/50 split screen layout. Left side features a vibrant visual graphic, right side features typography and a login/signup form.',
++      anatomy: [
++        { id: 'split-left', label: 'Left Pane (Visual)', type: 'section', role: '브랜딩 이미지나 3D 그래픽을 크게 배치하여 감성적인 이끌림을 줍니다.' },
++        { id: 'split-right', label: 'Right Pane (Action)', type: 'section', role: '폼(Form)이나 CTA를 배치하여 사용자의 직접적인 상호작용을 유도합니다.' }
++      ]
++    },
++    {
++      id: 'asymmetrical',
++      group: 'Basic Web Layouts',
++      title: 'Asymmetrical Layout',
++      description: '좌우 대칭을 깨뜨려 동적이고 트렌디한 느낌을 주는 레이아웃',
++      prompt: 'Asymmetrical layout with overlapping glassmorphism shapes and off-center typography to create tension and artistic flair.',
++      anatomy: [
++        { id: 'off-center-text', label: 'Off-center Typography', type: 'typography', role: '정렬을 의도적으로 어긋나게 하여 시각적인 호기심과 모던함을 유발합니다.' },
++        { id: 'overlapping-media', label: 'Overlapping Media', type: 'section', role: '텍스트나 다른 박스 위를 덮치듯 배치되어 공간감을 형성합니다.' }
++      ]
++    },
++    {
++      id: 'f-shape',
++      group: 'Basic Web Layouts',
++      title: 'The F-shape Layout',
++      description: '사용자의 시선이 F자 형태로 이동하는 것을 고려한 레이아웃',
++      prompt: 'F-pattern layout optimized for reading. Top navigation bar, left-aligned headings, and dense text/list content reading left-to-right.',
++      anatomy: [
++        { id: 'f-top-bar', label: 'Top Horizontal Bar', type: 'section', role: 'F자의 첫 번째 가로줄. 가장 눈에 띄며 로고와 핵심 메뉴가 들어갑니다.' },
++        { id: 'f-sub-bar', label: 'Sub Heading Bar', type: 'section', role: 'F자의 두 번째 가로줄. 중요한 서브메뉴나 첫 번째 핵심 콘텐츠 라인입니다.' },
++        { id: 'f-left-edge', label: 'Left Edge Scannability', type: 'section', role: '시선이 머무는 좌측 축. 굵은 제목이나 글머리 기호를 배치합니다.' }
++      ]
++    },
++    {
++      id: 'z-shape',
++      group: 'Basic Web Layouts',
++      title: 'The Z-shape Layout',
++      description: '시선이 지그재그(Z)로 이동하도록 설계된 랜딩 페이지 구조',
++      prompt: 'Z-pattern landing page. Logo top left, CTA top right, hero image diagonal, ending with another CTA bottom right.',
++      anatomy: [
++        { id: 'z-point-1', label: 'Top Left (Start)', type: 'section', role: '시선이 시작되는 곳으로, 보통 브랜드 로고가 위치합니다.' },
++        { id: 'z-point-2', label: 'Top Right (Action 1)', type: 'action', role: '시선이 우측으로 이동하며 만나는 첫 번째 CTA(로그인 등)입니다.' },
++        { id: 'z-diagonal', label: 'Diagonal Flow', type: 'section', role: '가운데를 가로지르는 큰 히어로 이미지로, 시선을 아래로 자연스럽게 내립니다.' },
++        { id: 'z-point-4', label: 'Bottom Right (Action 2)', type: 'action', role: 'Z의 끝점. 최종적으로 사용자가 클릭해야 할 핵심 가입/구매 버튼입니다.' }
++      ]
++    },
++    {
++      id: 'card-block',
++      group: 'Basic Web Layouts',
++      title: 'Card or Block Layout',
++      description: '정보를 모듈화된 카드 형태로 균일하게 배치하는 그리드',
++      prompt: 'Card block layout. Symmetrical 4-column grid of equal sized product cards with images, titles, and price tags.',
++      anatomy: [
++        { id: 'symmetrical-grid', label: 'Symmetrical Grid', type: 'section', role: '동일한 크기의 카드를 규칙적으로 배열하여 많은 정보를 깔끔하게 보여줍니다.' },
++        { id: 'standalone-card', label: 'Standalone Card', type: 'section', role: '이미지, 텍스트, 버튼이 하나의 덩어리로 묶인 콘텐츠 모듈입니다.' }
++      ]
++    },
++    {
++      id: 'featured-media',
++      group: 'Basic Web Layouts',
++      title: 'Featured Media Layout',
++      description: '초대형 이미지나 비디오를 배경으로 꽉 채운 몰입형 레이아웃',
++      prompt: 'Full-bleed featured image layout. Cinematic dark background image with center-aligned white overlay text and glass buttons.',
++      anatomy: [
++        { id: 'full-bleed-media', label: 'Full-bleed Background', type: 'section', role: '화면 전체를 덮는 압도적인 고화질 미디어로 감성적 몰입을 극대화합니다.' },
++        { id: 'overlay-content', label: 'Overlay Content', type: 'section', role: '배경 위에 떠 있는 텍스트와 버튼으로, 배경과 대비되도록 디자인됩니다.' }
++      ]
++    },
++    {
++      id: 'masonry',
++      group: 'Basic Web Layouts',
++      title: 'Masonry Layout',
++      description: '세로 길이가 제각각인 요소를 빈틈없이 벽돌처럼 쌓는 레이아웃',
++      prompt: 'Masonry grid layout like Pinterest. Varying height image cards tightly packed in 3 columns without uniform rows.',
++      anatomy: [
++        { id: 'masonry-column', label: 'Masonry Column', type: 'section', role: '가로폭은 고정되나 세로 길이는 자유로운 핀터레스트 스타일의 열입니다.' },
++        { id: 'dynamic-height-item', label: 'Dynamic Height Item', type: 'section', role: '원본 이미지의 비율을 그대로 유지하여 잘림 없이 아름답게 보여줍니다.' }
++      ]
++    },
++    {
++      id: 'magazine',
++      group: 'Basic Web Layouts',
++      title: 'Magazine Layout',
++      description: '다양한 크기의 그리드를 섞어 복합적인 뉴스를 전달하는 구조',
++      prompt: 'Magazine style layout with a large featured article, multiple small sidebar articles, and a grid of medium articles below.',
++      anatomy: [
++        { id: 'hero-article', label: 'Hero Article', type: 'section', role: '가장 큰 면적을 차지하는 메인 기사로 시선을 확 잡아끕니다.' },
++        { id: 'sidebar-articles', label: 'Sidebar Articles', type: 'section', role: '주변에 작게 배치된 서브 기사들로, 정보의 밀도를 높입니다.' }
++      ]
++    },
++    {
++      id: 'fixed-nav',
++      group: 'Basic Web Layouts',
++      title: 'Layout with Fixed Nav',
++      description: '스크롤과 무관하게 네비게이션이 화면의 특정 위치(상단/좌측)에 고정된 형태',
++      prompt: 'Dashboard layout with a fixed left sidebar and a scrollable main content area to the right.',
++      anatomy: [
++        { id: 'fixed-sidebar', label: 'Fixed Sidebar', type: 'section', role: '화면에 단단히 고정되어 언제든 다른 메뉴로 즉시 이동할 수 있는 관제탑 역할입니다.' },
++        { id: 'scrollable-region', label: 'Scrollable Region', type: 'section', role: '데이터나 대시보드 위젯이 무한히 스크롤되는 독립적인 영역입니다.' }
++      ]
++    },
++    {
++      id: 'hidden-nav',
++      group: 'Basic Web Layouts',
++      title: 'Layout with Hidden Nav',
++      description: '햄버거 버튼 등을 통해 평소엔 메뉴를 숨겨 화면 공간을 극대화하는 레이아웃',
++      prompt: 'Minimalist layout where navigation is hidden behind a hamburger menu icon. Expands into a full-screen glassmorphism overlay.',
++      anatomy: [
++        { id: 'hamburger-trigger', label: 'Hamburger Trigger', type: 'action', role: '클릭 시 메뉴를 열어주는 최소한의 UI 요소(3선 아이콘 등)입니다.' },
++        { id: 'fullscreen-overlay', label: 'Fullscreen Overlay Nav', type: 'section', role: '호출 시 나타나 화면 전체를 덮는 웅장하고 몰입감 있는 네비게이션 창입니다.' }
++      ]
++    },
++    {
++      id: 'interactive',
++      group: 'Basic Web Layouts',
++      title: 'Interactive Layout',
++      description: '마우스 움직임이나 스크롤에 따라 요소가 3D로 움직이거나 변형되는 최신 레이아웃',
++      prompt: 'Highly interactive layout with elements that follow the cursor, parallax scroll effects, and dynamic 3D tilting cards.',
++      anatomy: [
++        { id: 'parallax-background', label: 'Parallax Background', type: 'section', role: '스크롤 속도를 다르게 하여 깊이감과 입체감을 부여하는 배경입니다.' },
++        { id: 'cursor-tracker', label: 'Cursor Tracking Element', type: 'action', role: '사용자의 마우스를 따라 물리적으로 반응하여 사이트가 살아있는 듯한 느낌을 줍니다.' }
++      ]
++    }
+   ]
+ };
